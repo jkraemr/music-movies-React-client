@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+$color-01: #14A2B8;
+$color-02: #20e1ff;
+
+.navbar-view-btn {
+  color: $color-01 !important;
+  text-decoration: none !important;
+}
+
+.navbar-view-btn:hover {
+  color: $color-02 !important;
+}

@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 import "./movie-view.scss";
 
-// let imgURL = './img/';
+let imgURL = 'https://mymusicmovies.herokuapp.com/images/';
 
 export class MovieView extends React.Component {
   render() {
@@ -20,7 +20,7 @@ export class MovieView extends React.Component {
       <Card className='text-white bg-secondary'>
         <Card.Img
           variant="top"
-          src={movie.ImagePath}
+          src={imgURL + movie.ImagePath}
         />
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>

@@ -80,13 +80,13 @@ export function RegistrationView(props) {
         <Form>
           <Form.Group controlId='formUsername'>
             <Form.Label>Username:</Form.Label>
-            <Form.Control type='text' value={username} placeholder='At least 4 characters required' onChange={e => setUsername(e.target.value)} />
+            <Form.Control type='text' value={username} placeholder='4 characters required' onChange={e => setUsername(e.target.value)} />
             {usernameErr && <p>{usernameErr}</p>}
           </Form.Group>
 
           <Form.Group controlId='formPassword'>
             <Form.Label>Password:</Form.Label>
-            <Form.Control type='password' value={password} placeholder='Minimun 8 characters including 1 number and 1 special character required' onChange={e => setPassword(e.target.value)} />
+            <Form.Control type='password' value={password} placeholder='8 characters incl. 1 number required' onChange={e => setPassword(e.target.value)} />
             {passwordErr && <p>{passwordErr}</p>}
           </Form.Group>
 

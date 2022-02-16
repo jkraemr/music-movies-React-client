@@ -33,10 +33,13 @@ export function NavbarView({ user }) {
           <Nav className="ml-auto">
             {/* Hide sign up if token exists */}
             {isAuth() && (
-              <Nav.Link href={'/users/${user}'}>{user}</Nav.Link>
+              <Nav.Link href={'/'}>Home</Nav.Link>
             )}
             {isAuth() && (
-              <Button className="navbar-view-btn" variant="link" onClick={() => { this.onLoggedOut() }}>Logout</Button>
+              <Nav.Link href={'/profile'}>Profile</Nav.Link>
+            )}
+            {isAuth() && (
+              <Button variant="link" onClick={() => { this.onLoggedOut() }}>Logout</Button>
             )}
             {!isAuth() && (
               <Nav.Link href="/">Login</Nav.Link>
