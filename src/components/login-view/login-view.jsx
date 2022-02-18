@@ -58,7 +58,7 @@ export function LoginView(props) {
 
     <Card className='text-white bg-secondary'>
       <Card.Body>
-        <Card.Title>Login</Card.Title>
+        <Card.Title>Sign in</Card.Title>
         <Form>
           <Form.Group controlId="formUsername">
             <Form.Label>Username:</Form.Label>

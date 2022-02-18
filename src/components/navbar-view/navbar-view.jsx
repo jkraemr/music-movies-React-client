@@ -39,13 +39,13 @@ export function NavbarView({ user }) {
               <Nav.Link href={'/profile'}>Profile</Nav.Link>
             )}
             {isAuth() && (
-              <Button variant="link" onClick={() => { this.onLoggedOut() }}>Logout</Button>
-            )}
-            {!isAuth() && (
-              <Nav.Link href="/">Login</Nav.Link>
+              <Button variant="link" onClick={() => { this.onLoggedOut() }}>Sign out</Button>
             )}
             {!isAuth() && (
               <Nav.Link href="/register">Register</Nav.Link>
+            )}
+            {!isAuth() && (
+              <Nav.Link href="/">Sign in</Nav.Link>
             )}
           </Nav>
         </Navbar.Collapse >
