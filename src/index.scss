@@ -2,8 +2,7 @@
   box-sizing: border-box;
 }
 
-$color-01: #14A2B8;
-$color-02: #fff;
+$color-01: #242529;
 
 body {
   background-color: $color-01 !important;
@@ -15,7 +14,9 @@ body {
 }
 
 .container {
-  border-radius: 3px;
+  border-radius: 0.5em;
+  margin: 1em;
+  padding: 1em;
 }
 
 .card {
