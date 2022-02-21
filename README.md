@@ -22,11 +22,9 @@ Registration view
 
 Genre view
 * Returns data about a genre, with a name and description
-* Displays example movies
 
  Director view
 * Returns data about a director (name, bio, birth year, death year)
-* Displays example movies
 
 Profile view
 * Allows users to update their user info (username, password, email, date of birth)
