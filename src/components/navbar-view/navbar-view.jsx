@@ -1,56 +1,99 @@
-import React from "react";
-import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import "./navbar-view.scss";
+import { connect } from 'react-redux';
 
-export function NavbarView({ user }) {
+import { Navbar, Container, Nav } from 'react-bootstrap';
+import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
 
-  // Sign out method
+
+import './navbar-view.scss';
+
+const mapStateToProps = (state) => {
+  const { visibilityFilter } = state;
+  return { visibilityFilter, userData: state.userData };
+};
+
+function NavbarView(props) {
+  const { userData, visibilityFilter } = props;
+
   onLoggedOut = () => {
     localStorage.clear();
-    window.open("/", "_self");
-  }
+    window.open('/', '_self');
+  };
 
-  // Token method
-  const isAuth = () => {
-    if (typeof window == "undefined") {
+  isAuth = () => {
+    if (typeof window == 'undefinded') {
       return false;
     }
-    if (localStorage.getItem("token")) {
-      return localStorage.getItem("token");
-    } else {
+    if (Object.keys(userData).length === 0) {
       return false;
+    } else {
+      return true;
     }
   };
 
-  // ul
   return (
-    <Navbar className="text-white" sticky="top" bg="dark" expand="lg" variant="dark">
-      <Container>
-        <Navbar.Brand className="navbar-logo" href="/">myMusicMovies</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ml-auto">
-            {/* Hide sign up if token exists */}
+    <Navbar className='nav-bar-cont' className='main-nav' sticky='top' bg='dark' expand='lg' variant='dark' className='mb-3'>
+      <Container >
+        <Navbar.Brand className='navbar-logo' href='/'>
+          <h1>myMusicMovies</h1>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+        <Navbar.Collapse id='responsive-navbar-nav'>
+          <Nav className='ml-auto'>
             {isAuth() && (
-              <Nav.Link href={'/'}>Home</Nav.Link>
+              <Nav.Link href={`/`}>
+                🎦 Movies
+              </Nav.Link>
             )}
             {isAuth() && (
-              <Nav.Link href={'/profile'}>Profile</Nav.Link>
+              <Nav.Link href={`/favorites`}>
+                &#9829; Favorites
+              </Nav.Link>
             )}
             {isAuth() && (
-              <Button variant="link" onClick={() => { this.onLoggedOut() }}>Sign out</Button>
+              <Nav.Link href={`/account`}>
+
+                &#119585; Account
+                {/* {userData.user.Username} */}
+              </Nav.Link>
             )}
-            {!isAuth() && (
-              <Nav.Link href="/register">Register</Nav.Link>
+            {isAuth() && (
+              <Nav.Link
+                className='handCursor'
+                onClick={() => {
+                  this.onLoggedOut();
+                }}
+              >
+
+                &#9211; Logout
+              </Nav.Link>
             )}
-            {!isAuth() && (
-              <Nav.Link href="/">Sign in</Nav.Link>
-            )}
+            {!isAuth() && <Nav.Link href='/register'>
+              &#10003; Create Account</Nav.Link>}
+            {!isAuth() && <Nav.Link href='/'>
+              &#9211; Login</Nav.Link>}
           </Nav>
-        </Navbar.Collapse >
-      </Container >
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   );
-
 }
+
+NavbarView.propTypes = {
+  userData: PropTypes.shape({
+    User: PropTypes.shape({
+      _id: PropTypes.string,
+      Username: PropTypes.string,
+      Password: PropTypes.string,
+      Email: PropTypes.string,
+      Birthday: PropTypes.string,
+      FavoriteMovies: PropTypes.array,
+    }),
+    token: PropTypes.string,
+  }),
+  visibilityFilter: PropTypes.string,
+};
+
+export default connect(mapStateToProps)(NavbarView);

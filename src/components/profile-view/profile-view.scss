@@ -1,1 +1,17 @@
-// profile-view.scss
+button {
+  background-color: green;
+  padding: 0.7em;
+  cursor: pointer;
+
+  // border: none;
+  opacity: 0.8;
+}
+
+button.accordion-button {
+  margin: 0 !important;
+  font-size: 0.5em;
+  background-color: none !important;
+  border: none;
+  border-radius: 0.25em;
+  color: #fff;
+}

@@ -1,15 +1,26 @@
-* {
-  box-sizing: border-box;
+h1 {
+  font-size: 1.1em !important;
+  letter-spacing: 0.03em;
 }
 
-$color-01: #14A2B8;
-$color-02: #20e1ff;
-
-.navbar-view-btn {
-  color: $color-01 !important;
-  text-decoration: none !important;
+.navbar {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.navbar-view-btn:hover {
-  color: $color-02 !important;
+.nav-bar-cont {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.navbar-brand {
+  padding: 0.03em !important;
+}
+
+.navbar-expand-lg>.container {
+  padding-left: 1em !important;
+}
+
+.navbar-toggler {
+  border: 0px solid transparent !important;
 }
