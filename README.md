@@ -1,6 +1,6 @@
-# Music Movies Client v2
+# Music Movies React Client
 
-The **Music Movies Client** React App is the client-side component of the **myMusicMovies** web application based on its existing server-side code (REST API and database) using the MERN stack. 
+The **Music Movies React Client** is the client-side component of the **myMusicMovies** web application based on its existing server-side code (Music Movies REST API and database) using the MERN stack. 
 
 ## Key Features
 
@@ -32,7 +32,7 @@ Profile view
 * Displays favorite movies
 * Allows users to remove a movie from their list of favorites
 
-## Who is the Music Movies API for?
+## Who is the Music Movies React Client for?
 * Users of the **myMusicMovies** web application. They will be movie enthusiasts who enjoy reading information about different music movies.
 
 ## Built with
