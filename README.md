@@ -41,3 +41,7 @@ The **My Music Movies** web application is built using the MERN stack:
 * Express.js
 * React.js
 * Node.js
+
+## Acknowledgements
+
+This project was built as part of the mentored CareerFoundry Full-Stack Web Development Program / Achievement 3/6 / Client-Side Programming & React: https://careerfoundry.com/en/courses/become-a-web-developer/
