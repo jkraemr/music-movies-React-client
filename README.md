@@ -1,6 +1,6 @@
 # Music Movies React Client
 
-The **Music Movies React Client** is the client-side component of the **myMusicMovies** web application based on its existing server-side code (Music Movies REST API and database) using the MERN stack. 
+The **Music Movies React Client** is the frontend component of the **myMusicMovies** web application based on its existing server-side code (RESTful Music Movies API and database) using the MERN stack.
 
 ## Key Features
 
